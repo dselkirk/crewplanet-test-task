@@ -1,0 +1,66 @@
+{
+  "name": "scentbird-test-task",
+  "version": "0.1.0",
+  "description": "Test task for ScentBird",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dselkirk/scentbird-test-task"
+  },
+  "bugs": {
+    "url": "https://github.com/dselkirk/scentbird-test-task/issues"
+  },
+  "author": "Dennis Selkirk <dennis.selkirk@gmail.com>",
+  "license": "MIT",
+  "homepage": "",
+  "engines": {
+    "node": "^6.9.1"
+  },
+  "devDependencies": {
+    "app-time": ">=0.7.0",
+    "axios": "^0.15.3",
+    "babel-eslint": "^7.1.1",
+    "cross-env": "^3.1.3",
+    "dom-scroll-into-view": "^1.2.1",
+    "eslint": "^3.11.1",
+    "eslint-config-zen": "^2.0.0",
+    "eslint-plugin-flowtype": "^2.29.1",
+    "eslint-plugin-react": "^6.8.0",
+    "lodash": "^4.17.4",
+    "rimraf": "^2.5.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "history": "^4.5.0",
+    "normalize.css": "^5.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "dom-scroll-into-view": "^1.2.0"
+  },
+  "apptime": {
+    "vendorLibs": [
+      "core-js",
+      "classnames",
+      "history",
+      "react",
+      "react-dom",
+      "react-router"
+    ]
+  },
+  "scripts": {
+    "postinstall": "app-time setup",
+    "start": "app-time start",
+    "start:dashboard": "app-time start --dashboard",
+    "prebuild": "rimraf build",
+    "build": "app-time build",
+    "build:analyze": "app-time build --analyze",
+    "lint": "eslint client",
+    "conf": "node ./scripts/generate-nginx-conf.js",
+    "test": "echo 'No tests specified.'",
+    "preversion": "npm test",
+    "postversion": "git push && git push --tags",
+    "bump:patch": "npm version patch -m \"v%s\"",
+    "bump:minor": "npm version minor -m \"v%s\"",
+    "bump:major": "npm version major -m \"v%s\"",
+    "bump": "npm run bump:patch"
+  }
+}
